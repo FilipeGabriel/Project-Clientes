@@ -6,6 +6,7 @@ import { TemplateModule } from './template/template.module';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientesModule } from './clientes/clientes.module';
 
 const routes: Routes = [{
   path: 'home', component: HomeComponent
@@ -20,7 +21,8 @@ const routes: Routes = [{
   imports: [
     BrowserModule,
     TemplateModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ClientesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
