@@ -13,6 +13,7 @@ export class ClientesFormComponent implements OnInit {
   cliente: Cliente;
   success: boolean = false;
   errors: String[];
+  notSuccess: boolean = false;
 
   constructor( private service: ClientesService ) {
     this.cliente = new Cliente();
@@ -22,10 +23,15 @@ export class ClientesFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.salvar(this.cliente).subscribe( Response => {
+    this.service.salvar(this.cliente).subscribe( response => {
+      this.notSuccess = false;
       this.success = true;
+      this.errors = [];
+      this.cliente = response;
     } , errorResponse => {
-      this.errors = errorResponse.error.errors;
+      this.success = false;
+      this.notSuccess = true;
+      this.errors = errorResponse.error.error;
     }
   )
   }
