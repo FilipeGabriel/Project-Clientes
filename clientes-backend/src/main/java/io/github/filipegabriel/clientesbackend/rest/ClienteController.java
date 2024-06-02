@@ -1,5 +1,7 @@
 package io.github.filipegabriel.clientesbackend.rest;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,11 @@ public class ClienteController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente salvar(@RequestBody @Valid Cliente cliente) {
 		return clienteRepository.save(cliente);
+	}
+	
+	@GetMapping
+	public List<Cliente> obterTodos(){
+		return clienteRepository.findAll();
 	}
 	
 	@GetMapping(value = "/{id}")
