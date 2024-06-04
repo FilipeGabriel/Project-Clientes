@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Cliente } from '../cliente';
 import { ClientesService } from '../../clientes.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clientes-form',
@@ -15,7 +16,10 @@ export class ClientesFormComponent implements OnInit {
   errors: String[];
   notSuccess: boolean = false;
 
-  constructor( private service: ClientesService ) {
+  constructor(
+    private service: ClientesService,
+    private router: Router
+   ) {
     this.cliente = new Cliente();
   }
 
@@ -28,12 +32,16 @@ export class ClientesFormComponent implements OnInit {
       this.success = true;
       this.errors = [];
       this.cliente = response;
-    } , errorResponse => {
-      this.success = false;
-      this.notSuccess = true;
-      this.errors = errorResponse.error.error;
-    }
-  )
+    }, errorResponse => {
+        this.success = false;
+        this.notSuccess = true;
+        this.errors = errorResponse.error.error;
+      }
+    )
+  }
+
+  voltarParaListagem(){
+    this.router.navigate(['clientes-lista'])
   }
 
 }

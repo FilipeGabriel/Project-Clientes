@@ -14,6 +14,7 @@
               </div>
             </div>
         </div>
+
         <div class="row" *ngIf="cliente.id" >
             <div class="col-md-6">
                 <div class="form-group">
@@ -28,6 +29,7 @@
               </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-6">
               <div class="form-group">
@@ -40,14 +42,19 @@
                 <label>CPF: *</label>
                 <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" />
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-success" >
-                    <i class="fa fa-save"></i> Salvar
-                </button>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-success" >
+                  <i class="fa fa-save"></i> Salvar
+              </button>
+
+              <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListagem()" >
+                <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+              </button>
             </div>
+          </div>
         </div>
-      </div>
     </form>
 </div>
