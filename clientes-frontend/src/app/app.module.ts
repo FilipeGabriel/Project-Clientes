@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientesModule } from './clientes/clientes.module';
 import { ClientesService } from './clientes.service';
+import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 
 const routes: Routes = [{
   path: 'home', component: HomeComponent
@@ -25,7 +26,8 @@ const routes: Routes = [{
     HttpClientModule,
     TemplateModule,
     RouterModule.forRoot(routes),
-    ClientesModule
+    ClientesModule,
+    ServicoPrestadoModule
   ],
   providers: [
     ClientesService
