@@ -10,6 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ClientesModule } from './clientes/clientes.module';
 import { ClientesService } from './clientes.service';
 import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
+import { ServicoPrestadoService } from './servico-prestado.service';
 
 const routes: Routes = [{
   path: 'home', component: HomeComponent
@@ -30,7 +31,8 @@ const routes: Routes = [{
     ServicoPrestadoModule
   ],
   providers: [
-    ClientesService
+    ClientesService,
+    ServicoPrestadoService
   ],
   bootstrap: [AppComponent]
 })
