@@ -25,4 +25,13 @@ public class StandardError implements Serializable{
 	private String path;
 	private String propertyName;
 	
+	public StandardError(Instant timestamp, Integer status, String error, String message, String path) {
+		super();
+		this.timestamp = timestamp;
+		this.status = status;
+		this.error = error;
+		this.message = message;
+		this.path = path;
+	}	
+	
 }
