@@ -13,10 +13,13 @@ import { ClientesService } from './clientes.service';
 import { ServicoPrestadoModule } from './servico-prestado/servico-prestado.module';
 import { ServicoPrestadoService } from './servico-prestado.service';
 import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: '', component: LayoutComponent, children: [
+    {path: 'home', component: HomeComponent}
+  ]}
 ];
 
 @NgModule({
@@ -24,7 +27,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
