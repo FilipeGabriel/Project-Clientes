@@ -1,16 +1,15 @@
-package io.github.filipegabriel.clientesbackend.rest.exception;
+package io.github.filipegabriel.clientes_api.rest.exception;
+
+import java.time.Instant;
+import java.time.format.DateTimeParseException;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.PropertyValueException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
-import javax.servlet.http.HttpServletRequest;
-
-import java.time.Instant;
-import java.time.format.DateTimeParseException;
-
 
 @ControllerAdvice
 public class ResourceException {

@@ -1,4 +1,4 @@
-package io.github.filipegabriel.clientesbackend.rest;
+package io.github.filipegabriel.clientes_api.rest;
 
 import javax.validation.Valid;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import io.github.filipegabriel.clientesbackend.model.entities.Usuario;
-import io.github.filipegabriel.clientesbackend.model.repositories.UsuarioRepository;
+import io.github.filipegabriel.clientes_api.entities.Usuario;
+import io.github.filipegabriel.clientes_api.repositories.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UsuarioController implements UserDetailsService {
 	
-	private final UsuarioRepository usuarioRepository;
+private final UsuarioRepository usuarioRepository;
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -47,4 +47,5 @@ public class UsuarioController implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		return usuarioRepository.findByUsername(username);
 	}
+
 }

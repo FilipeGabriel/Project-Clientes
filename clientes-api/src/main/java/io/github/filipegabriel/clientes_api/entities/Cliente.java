@@ -1,4 +1,4 @@
-package io.github.filipegabriel.clientesbackend.model.entities;
+package io.github.filipegabriel.clientes_api.entities;
 
 import java.time.LocalDate;
 
@@ -18,10 +18,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data 		//Cria os construtores com e sem parametros, getters e setters, hashcode e equals, to string
+@Data		//Cria os construtores com e sem parametros, getters e setters, hashcode e equals, to string
 @NoArgsConstructor
 @AllArgsConstructor
-public class Cliente{
+public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

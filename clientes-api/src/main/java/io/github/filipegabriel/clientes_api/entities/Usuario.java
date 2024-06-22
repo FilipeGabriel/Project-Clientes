@@ -1,17 +1,20 @@
-package io.github.filipegabriel.clientesbackend.model.entities;
+package io.github.filipegabriel.clientes_api.entities;
 
 import java.util.Collection;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+//import org.springframework.security.core.GrantedAuthority;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Data
@@ -19,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class Usuario implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -30,10 +33,6 @@ public class Usuario implements UserDetails {
 	@Column(nullable= false, name = "senha")
 	private String password;
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
-	}
 	
 	@Override
 	public String getUsername() {
@@ -59,5 +58,10 @@ public class Usuario implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-	
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
 }
