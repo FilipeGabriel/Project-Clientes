@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from './usuario';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +12,29 @@ export class LoginComponent {
 
   username: string;
   password: string;
-  loginError: boolean;
+  success: boolean;
   cadastrando: boolean;
+  mensagemSucesso: string;
+  mensagemError: string;
 
-  constructor( private router: Router ) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   onSubmit(){
-    this.router.navigate(['/home']);
+
+    this.authService
+        .tentarLogar( this.username, this.password )
+        .subscribe(response => {
+          console.log(response)
+          this.router.navigate(['/home'])
+        }, responseError => {
+          this.success = false;
+          this.mensagemError = 'Usuário e/ou senha incorreto!'
+        })
+
+
   }
 
   preparaCadastrar(event: any){
@@ -26,6 +44,24 @@ export class LoginComponent {
 
   cancelaCadastro(){
     this.cadastrando = false;
+  }
+
+  cadastrar(){
+    const usuario: Usuario = new Usuario();
+    usuario.username = this.username;
+    usuario.password = this.password;
+    this.authService
+        .salvar(usuario)
+        .subscribe(response => {
+          this.mensagemSucesso = "Cadastro realizado com sucesso! Efetue o login."
+          this.success = true;
+          this.cadastrando = false;
+          this.username = "";
+          this.password = "";
+        }, responseError => {
+          this.success = false;
+          this.mensagemError = responseError.error.error;
+        } )
   }
 
 }

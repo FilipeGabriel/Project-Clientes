@@ -25,10 +25,10 @@ public class Usuario implements UserDetails {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable= false, unique = true, name = "login")
+	@Column(nullable= false, unique = true)
 	private String username;
 	
-	@Column(nullable= false, name = "senha")
+	@Column(nullable= false)
 	private String password;
 
 	

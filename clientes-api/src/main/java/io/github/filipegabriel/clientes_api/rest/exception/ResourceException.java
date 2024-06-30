@@ -1,5 +1,6 @@
 package io.github.filipegabriel.clientes_api.rest.exception;
 
+
 import java.time.Instant;
 import java.time.format.DateTimeParseException;
 
@@ -37,5 +38,4 @@ public class ResourceException {
 		StandardError newError = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
 		return ResponseEntity.status(status).body(newError);
 	}
-	
 }

@@ -2,10 +2,12 @@ package io.github.filipegabriel.clientes_api.rest;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,11 +27,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UsuarioController implements UserDetailsService {
 	
-private final UsuarioRepository usuarioRepository;
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
+	
+	private final UsuarioRepository usuarioRepository;
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public void salvar(@RequestBody @Valid Usuario usuario) {
+		String passwordEncoded = passwordEncoder.encode(usuario.getPassword());
+		usuario.setPassword(passwordEncoded); 
 		usuarioRepository.save(usuario);
 	}
 	
