@@ -16,12 +16,13 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthService } from './auth.service';
 import { TokenInterceptor } from './token.interceptor';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: '', component: LayoutComponent, children: [
-    {path: 'home', component: HomeComponent}
-  ]}
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LayoutComponent, children: [
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }
+  ] }
 ];
 
 @NgModule({
