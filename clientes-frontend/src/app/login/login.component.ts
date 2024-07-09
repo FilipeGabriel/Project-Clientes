@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
+  imageLogo = 'assets/images/logo.svg';
   username: string;
   password: string;
   success: boolean;
