@@ -67,7 +67,7 @@
  </br>
  <p>
   Essa é a home page.</br> 
-  Embora não tenha informações, ela está inserida para futuras atualizações.
+  Embora não tenha informações, ela está inserida para futuras atualizações;
   </br>
   </br>
  </p>
@@ -75,7 +75,95 @@
  <p align="center">
   <img loading="lazy" src="https://github.com/FilipeGabriel/Project-Clientes/assets/79121437/f770f79e-48e6-4fb5-b54f-8a94a4aec2dd" alt="home" width="750" height="400" />
  </p>
-  
+ </br>
+ 
+ <p>
+  Seguindo para as próximas telas, essa é a tela onde mostra a lista de clientes cadastrados. Clicando no botão Novo, é possível cadastrar um cliente;
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/c68edd05-4f81-4f5b-a781-56b9aed0fa7c" alt="lista-cliente" width="700" height="400" />
+ </p>
+ </br>
+
+ <p>
+  Ao acessar um novo cadastro de clientes, para fazer um cadastro deve-se inserir o nome e o cpf do mesmo(Os dois são campos obrigatórios);
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/07dad765-19ca-4db0-a233-986c470366bb" alt="cadastro-clientes" width="700" height="400" />
+ </p>
+ </br>
+
+ <p>
+  Finalizado o cadastro do usuário, seguimos para a página do cliente, em que mais dois campos são inseridos no formulário, ID e a data de cadastro;
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/082cec01-f9aa-452d-8057-7146764b9236" alt="cliente-cadastrado" width="700" height="400" />
+ </p>
+ </br>
+
+ <p>
+  Retornando para a Lista de clientes, o cliente cadastrado prviamente aparecerá na lista com suas informações de cadastro e dois botões, com a possíbilidade de edita-lo ou excluí-lo;
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/2b305b0b-301e-436c-9c58-16f139e02279" alt="lista-cliente2" width="700" height="400" />
+ </p>
+ </br>
+
+ <p>
+  Clicando para excluir o cliente, aparece um card para confirmar se realmente quer excluí-lo;
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/b9f867b1-26a7-4539-8b34-b16beb662718" alt="lista-cliente-exclusao" width="700" height="400" />
+ </p>
+ </br>
+
+ <p>
+  Essa é a lista de serviiçoas cadastrados. Aqui você pode cadastrar novos serviços, e pesquisar esses serviços a partir do usuário vinculado a ele, conforme próximas imagens.
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/4dbb450b-6d5a-424d-a16e-558a260bd9e7" alt="lista-servico" width="700" height="400" />
+ </p></br>
+
+ <p>
+  Aqui você cadastra novos serviços, mas só é possível vincular um serviço à um usuário, apenas se o usuário já foi cadastrado previamente. 
+  Assim ele aparecerá na lista de usuários na tela de cadastro.</br> 
+  É necessário também inserir os campos, Descrição, Data e Preço. 
+  </br>
+  </br>
+ </p>
+
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/a7c9cab8-4313-4f33-99af-8204815d1178" alt="cadastro-servico" width="700" height="400" />
+ </p></br>
+
+ <p>
+  Salvando o serviço, você é trazido de volta à lista de serviços.</br>
+  Insira o nome do cliente e o mês em que o serviço foi prestado, para que a lista seja preenchida com todos os serviços para esse cliente nesse mês.
+  </br>
+  </br>
+ </p>
+ 
+ <p align="center">
+  <img loading="lazy" src="https://github.com/user-attachments/assets/23aaf4e0-6ea6-4b07-bc66-2415813e20cb" alt="lista-servico-search" width="700" height="400" />
+ </p></br>
 
 
 ## Tecnologias
